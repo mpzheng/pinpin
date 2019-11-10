@@ -1,0 +1,30 @@
+<view class="container">
+  <image class='background' src="../src/background-image.png" mode="aspectFill"></image>
+  <view class='selection'>
+    <image src='../src/大遮罩.png' class='test-image1'></image>
+    <image src='../src/路线.png' class='test-image2'></image>
+    <view class='test-image2'>
+      <text class="test-text1">{{beginName}}</text>
+      <text class="test-text2">{{aimName}}</text>
+    </view> 
+  </view>
+
+  <view class='selection'>
+    <map id="map" longitude="{{beginlongitude}}" latitude="{{beginlatitude}}" scale="14" bindcontroltap="controltap"  bindmarkertap="markertap" polyline="{{polyline}}" show-location style="width: 100%; height: 250px;"></map>
+  </view>
+
+  <view class='selection1'>
+    <text class='hind-text'>确认起始地和目的地后点击确认进入拼单信息填写</text>
+  </view>
+
+  <view class='selection2'>
+    <image src='../src/确认按钮.png' class='correct-image' bindtap="jumpToNext"></image>
+  </view>
+
+  <view class='space7'>
+    <view class='create'>创 建</view>
+    <view class='now'>当 前</view>
+  </view>
+
+
+</view>

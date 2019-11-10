@@ -1,0 +1,22 @@
+<view class="container">
+  <image class='background' src="../src/background-image.png" mode="aspectFill"></image>
+
+  <view class='selection'>
+    <image src='../src/上遮罩.png' class='test-image1'></image>
+    <image src='../src/人物矢量图.png' class='user-detail'></image>
+    <text  class='titel-text'>欢迎您</text>
+  </view>
+
+  <view class='selection'>
+    <image src='../src/搜索框.png' class='test-image2'></image>
+    <view class="input">
+      <input value="{{tempAim}}" class="weui-input" maxlength="50" placeholder="输入您的目的地" bindinput="getAim"/>
+      <image src='../src/放大镜.png' class='search' bindtap="sendAim"></image>
+    </view>
+  </view>
+
+  <view class='space7'>
+    <view class='create'>创 建</view>
+    <view class='now'>当 前</view>
+  </view>
+</view>

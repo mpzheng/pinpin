@@ -1,0 +1,96 @@
+<view class="container">
+  <image class='background' src="../src/background-image.png" mode="aspectFill"></image>
+
+  <view class='selection1'>
+    <view class='space1'>
+      <view class="title-icon">
+        <image src='../src/拼单信息矢量图.png'></image>
+      </view>
+      <view class="title-text">
+        <text>拼单信息填写</text>
+      </view>
+    </view>
+  </view>
+
+  <view class='selection2'>
+    <view class='space2'>
+      <view class="small-space1">
+        <text>起点</text>
+      </view>
+      <view class="small-space2">
+        <text>{{beginName}}</text>
+      </view>
+      <view class="small-space1">
+        <text>终点</text>
+      </view>
+      <view class="small-space2">
+        <text>{{aimName}}</text>
+      </view>
+    </view>
+  </view> 
+
+  <view class='selection2'>
+    <view class='space3'>
+      <view class="small-space3">
+        <text>预计出发日期</text>
+      </view>
+
+      
+      <picker mode="date" value="{{beginTime.date}}" start="2019-09-01" end="2020-09-01" bindchange="bindDateChange">
+         <view class="small-space4">
+          <view class="picker">
+            {{beginTime.date}}
+          </view>
+        </view>
+      </picker>
+  
+
+      <view class="small-space3">
+        预计出发时间
+      </view>
+
+      
+      <picker mode="time" value="{{beginTime.time}}" bindchange="bindTimeChange">
+        <view class="small-space4">
+          <view class="picker">
+            {{beginTime.time}}
+          </view>
+        </view>
+      </picker>
+      
+
+      <view class="small-space3">
+        <text>最长等待时间</text>
+      </view>
+      <picker mode="time" value="{{waitTime}}" bindchange="bindWaitTimeChange">
+        <view class="small-space4">
+          <view class="picker">
+            {{waitTime}} h
+          </view>
+        </view>
+      </picker>
+
+    </view>
+  </view>
+
+  <view class='selection2'>
+    <view class='space4'>
+      <text>筛选拼友(暂无)</text>
+    </view>
+  </view>
+
+  <view class='selection2'>
+    <view class='space5'>
+      <view class='correct' bindtap="bindCorrect">
+        <text>确认</text>
+      </view>
+    </view>
+  </view>
+
+  <view class='space6'></view>
+
+  <view class='space7'>
+    <view class='create'>创 建</view>
+    <view class='now'>当 前</view>
+  </view>
+</view>

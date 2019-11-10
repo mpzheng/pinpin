@@ -1,0 +1,91 @@
+<view class="container">
+  <image class='background' src="../src/background-image.png" mode="aspectFill"></image>
+
+  <view class='selection1'>
+    <view class='space1'>
+      <view class="title-icon">
+        <image src='../src/正在拼单矢量图.png'></image>
+      </view>
+      <view class="title-text">
+        <text>正在拼单...</text>
+      </view>
+    </view>
+  </view>
+
+  <view class='selection2'>
+    <view class='space2'>
+      <view class="small-space1">
+        <text>起点</text>
+      </view>
+      <view class="small-space2">
+        <text>{{beginName}}</text>
+      </view>
+      <view class="small-space1">
+        <text>终点</text>
+      </view>
+      <view class="small-space2">
+        <text>{{aimName}}</text>
+      </view>
+    </view>
+  </view> 
+
+  <view class='selection2'>
+    <view class='space3'>
+      <view class="small-space3">
+        <text>预计出发日期</text>
+      </view>
+
+      
+      <view class="small-space4">
+        {{beginTime.date}}
+      </view>
+  
+      <view class="small-space3">
+        预计出发时间
+      </view>
+
+      <view class="small-space4">  
+        {{beginTime.time}}
+      </view>
+  
+      <view class="small-space3">
+        <text>剩余等待时间</text>
+      </view>
+        <view class="small-space4">
+          {{waitTime}} 
+        </view>
+    
+    </view>
+  </view>
+
+  <view class='selection2'>
+    <view class='space4'>
+      <text>筛选拼友(暂无)</text>
+    </view>
+  </view>
+
+
+
+  <view class='selection2'>
+    <view class='space5'>
+      <view class="button1">
+        <text class='test-text1'>已拼</text>
+        {{countPeople}}人
+      </view>
+      <view class="button2">
+        <text>取 消</text>
+        <text>拼 单</text>
+      </view>
+    </view>
+  </view>
+
+  <view class='space6'></view>
+
+  <view class='selection2'>
+    <view class='space7'>
+      <view class='create'>创 建</view>
+      <view class='now'>当 前</view>
+    </view>
+  </view>
+  
+</view>
