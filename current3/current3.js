@@ -39,20 +39,19 @@ Page({
     })
   },
 
-  bindCorrect:function(){
+  bindCorrect: function () {
+    wx.setStorage({
+      key: "list",
+      data: this.data
+    })
     const db = wx.cloud.database()
     db.collection('order').add({
       // data 字段表示需新增的 JSON 数据
       data: this.data,
       success: function (res) {
         // res 是一个对象，其中有 _id 字段标记刚创建的记录的 id
-        wx.setStorage({
-          key: "list",
-          data: {id:res._id}
-        })
       }
     })
-
     wx.navigateTo({
       url: '../current4/current4'
     })

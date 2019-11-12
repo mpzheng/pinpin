@@ -2,15 +2,15 @@
   <image class='background' src="../src/background-image.png" mode="aspectFill"></image>
 
   <view class='selection'>
-    <image src='../src/大遮罩.png' class='test-image1'></image>
-    <image src='../src/放大镜.png' class='test-image2'></image>
+    <image src='../src/big-cover.png' class='test-image1'></image>
+    <image src='../src/search-icon.png' class='test-image2'></image>
     <text  class='titel-text'>为您推荐</text>
   </view>
 
   <view class='selection'>
     <view class='content'>
       <view class='content-item' wx:for="{{listItem}}" wx:key>
-        <image src='../src/大遮罩.png'></image>
+        <image src='../src/big-cover.png'></image>
         <view class='content-content'>
           <text class='text1'>{{item.beginTime.time}}</text>
           <text class='text1'>出发时间:</text>
@@ -18,10 +18,10 @@
           <text class='text1'>终点:</text>
           <text class='text1'>{{item.countPeople}}</text>
           <text class='text1'>已拼到:</text>
-          <image src='../src/定位矢量图.png'></image>
+          <image src='../src/locate-icon.png'></image>
         </view>
       </view>
-      <image src='../src/创建新单.png' class='createNew' bindtap="creatNew"></image>
+      <image src='../src/create-new.png' class='createNew' bindtap="creatNew"></image>
       <view class='space'></view>
     </view>
   </view>

@@ -2,28 +2,7 @@ Page({
 
   data: {
     aimName:'',
-    listItem: [
-      {
-        beginTime:'15:50',
-        aimName:'爱情海',
-        countPeople:'1'
-      },
-      {
-        beginTime: '11:50',
-        aimName: '福州大学',
-        countPeople: '2'
-      },
-      {
-        beginTime: '23:50',
-        aimName: '汽车北站',
-        countPeople: '3'
-      },
-      {
-        beginTime: '10:00',
-        aimName: '福州大学',
-        countPeople: '1'
-      }
-    ]
+    listItem: []
   },
 
   creatNew :function (){

@@ -1,8 +1,8 @@
 <view class="container">
   <image class='background' src="../src/background-image.png" mode="aspectFill"></image>
   <view class='selection'>
-    <image src='../src/大遮罩.png' class='test-image1'></image>
-    <image src='../src/路线.png' class='test-image2'></image>
+    <image src='../src/big-cover.png' class='test-image1'></image>
+    <image src='../src/road.png' class='test-image2'></image>
     <view class='test-image2'>
       <text class="test-text1">{{beginName}}</text>
       <text class="test-text2">{{aimName}}</text>
@@ -18,7 +18,11 @@
   </view>
 
   <view class='selection2'>
-    <image src='../src/确认按钮.png' class='correct-image' bindtap="jumpToNext"></image>
+    <view class='space5'>
+      <view class='correct' bindtap="jumpToNext">
+        <text>确认</text>
+      </view>
+    </view>
   </view>
 
   <view class='space7'>

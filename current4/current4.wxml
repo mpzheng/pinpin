@@ -4,7 +4,7 @@
   <view class='selection1'>
     <view class='space1'>
       <view class="title-icon">
-        <image src='../src/正在拼单矢量图.png'></image>
+        <image src='../src/pining-icon.png'></image>
       </view>
       <view class="title-text">
         <text>正在拼单...</text>

@@ -60,9 +60,16 @@ page{
   top: 30rpx;
 }
 
-.correct-image{
+.correct{
   height: 100rpx;
   width: 250rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(0, 0, 255,0.6);
+  border-radius: 25rpx;
+  color: white;
+  font-size: 50rpx;
 }
 
 .selection2{

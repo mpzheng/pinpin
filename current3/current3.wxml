@@ -4,7 +4,7 @@
   <view class='selection1'>
     <view class='space1'>
       <view class="title-icon">
-        <image src='../src/拼单信息矢量图.png'></image>
+        <image src='../src/pindan-icon.png'></image>
       </view>
       <view class="title-text">
         <text>拼单信息填写</text>
