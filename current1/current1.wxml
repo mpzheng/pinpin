@@ -11,7 +11,7 @@
     <view class='content'>
       <view class='content-item' wx:for="{{listItem}}" wx:key>
         <image src='../src/big-cover.png'></image>
-        <view class='content-content'>
+        <view class='content-content' bindtap="bindJoinTo">
           <text class='text1'>{{item.beginTime.time}}</text>
           <text class='text1'>出发时间:</text>
           <text class='text1'>{{item.aimName}}</text>

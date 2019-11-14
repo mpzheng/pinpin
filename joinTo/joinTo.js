@@ -9,7 +9,7 @@ Page({
       }
     ],
     waitTime: '',
-    countPeople:''
+    countPeople: ''
   },
 
   onLoad: function () {
@@ -26,7 +26,14 @@ Page({
       }
     })
   },
-  bindPinFriend: function () {
+
+  bindCorrect:function(){
+    wx.navigateTo({
+      url: '../current4/current4',
+    })
+  },
+
+  bindPinFriend:function(){
     wx.navigateTo({
       url: '../pinFriend/pinFriend',
     })

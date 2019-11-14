@@ -2,12 +2,39 @@ Page({
 
   data: {
     aimName:'',
-    listItem: []
+    listItem: [//需要加id
+      {
+        beginTime:'15:50',
+        aimName:'爱情海',
+        countPeople:'1'
+      },
+      {
+        beginTime: '11:50',
+        aimName: '福州大学',
+        countPeople: '2'
+      },
+      {
+        beginTime: '23:50',
+        aimName: '汽车北站',
+        countPeople: '3'
+      },
+      {
+        beginTime: '10:00',
+        aimName: '福州大学',
+        countPeople: '1'
+      }
+    ]
   },
 
   creatNew :function (){
     wx.navigateTo({
-      url: '../current2/current2?aimName=' + this.data.aimName,
+      url: '../current2/current2?aimName=' + this.data.aimName
+    })
+  },
+
+  bindJoinTo:function(e){
+    wx.navigateTo({
+      url: '../joinTo/joinTo'
     })
   },
 

@@ -1,0 +1,3 @@
+<view class="container">
+  <image class='background' src="../src/background-image.png" mode="aspectFill"></image>
+</view>
