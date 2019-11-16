@@ -9,3 +9,136 @@ page{
   position:fixed; 
   z-index: -1;
 }
+
+.selection{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.space1{
+  height: 150rpx;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 15rpx;
+}
+
+.title-icon{
+  flex: 4;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+}
+.title-icon image{
+  padding-left: 60%;
+  width: 85rpx;
+  height: 70rpx;
+}
+
+.title-text{
+  flex: 5;
+  display: flex;
+  align-items: center;
+  font-size: 50rpx;
+}
+
+.content{
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.content-item{
+  display: flex;
+  margin-top: 30rpx;
+  height: 300rpx;
+  width: 100%;
+  background-color:rgba(255, 255, 255, 0.6);
+  border-radius: 20rpx;
+  justify-content: center;
+  align-items: center;
+}
+
+.small-content1{
+  display: flex;
+  flex: 4;
+  height: 250rpx;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.small-content1 image{
+  height: 110rpx;
+  width: 130rpx;
+  border-radius: 50rpx;
+}
+
+.small-content2{
+  display: flex;
+  flex: 6;
+  height: 250rpx;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-left: 10%;
+  background-color:rgba(255, 255, 255, 0.8);
+  border-radius: 20rpx;
+  margin-right: 5%;
+}
+
+.text-test{
+  display: flex;
+  height: 33%;
+  width: 100%;
+  align-items: center;
+}
+
+
+.space6{
+  height: 200rpx;
+  width: 100%;
+}
+
+.space7{
+  height: 90rpx;
+  position: fixed;
+  width: 100%;
+  bottom: -10rpx;
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 20rpx;
+}
+
+.now{
+  position: fixed;
+  height: 90rpx;
+  width: 130rpx;
+  bottom: -15rpx;
+  background-color: rgb(150, 150, 150);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20rpx;
+  color: white;
+  right: 20%;
+}
+
+.create{
+  position: fixed;
+  height: 90rpx;
+  width: 130rpx;
+  right: 20%;
+  bottom: -15rpx;
+  background-color: rgb(253, 121, 121);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20rpx;
+  color: white;
+  left: 20%;
+}
