@@ -1,3 +1,39 @@
 <view class="container">
   <image class='background' src="../src/background-image.png" mode="aspectFill"></image>
+
+  <view class='selection'>
+    <view class='space1'>
+      <view class="title-icon">
+        <image src='../src/people-icon.png'></image>
+      </view>
+      <view class="title-text">
+        <text>当前拼友</text>
+      </view>
+    </view>
+  </view>
+
+  <view class='selection'>
+    <view class='content'>
+      <view class='content-item' wx:for="{{listItem}}" wx:key>
+        <view class='small-content1'>
+          <image src='https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3632677651,3179755979&fm=26&gp=0.jpg'></image>
+          {{item.name}}
+        </view>
+        <view class='small-content2'>
+          <view class="text-test">性别：{{item.sex}}</view>
+          <view class="text-test">电话：{{item.tel}}</view>     
+          <view class="text-test">学院：{{item.sdept}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="space6"></view>
+
+  <view class='selection'>
+    <view class='space7'>
+        <view class='create'>创 建</view>
+        <view class='now'>当 前</view>
+      </view>
+  </view>
 </view>
