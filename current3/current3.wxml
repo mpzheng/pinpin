@@ -26,6 +26,13 @@
       <view class="small-space2">
         <text>{{aimName}}</text>
       </view>
+      <view class="small-space1">
+        <text>集合地</text>
+      </view>
+      <view class="small-space2">
+        <text class="hind">请输入:</text>
+        <input class="weui-input" maxlength="20" bindinput="getUnionPlace" text-align:center/>
+      </view>
     </view>
   </view> 
 
@@ -91,6 +98,6 @@
 
   <view class='space7'>
     <view class='create'>创 建</view>
-    <view class='now'>当 前</view>
+    <view class='now' bindtap="JumpToNow">当 前</view>
   </view>
 </view>

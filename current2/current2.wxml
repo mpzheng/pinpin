@@ -27,7 +27,7 @@
 
   <view class='space7'>
     <view class='create'>创 建</view>
-    <view class='now'>当 前</view>
+    <view class='now' bindtap="JumpToNow">当 前</view>
   </view>
 
 

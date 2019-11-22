@@ -9,9 +9,9 @@
 
   <view class='selection'>
     <view class='content'>
-      <view class='content-item' wx:for="{{listItem}}" wx:key>
+      <navigator url='../joinTo/joinTo?_id={{item._id}}' class='content-item' wx:for="{{listItem}}" wx:key="{{index}}">
         <image src='../src/big-cover.png'></image>
-        <view class='content-content' bindtap="bindJoinTo">
+        <view class='content-content'>
           <text class='text1'>{{item.beginTime.time}}</text>
           <text class='text1'>出发时间:</text>
           <text class='text1'>{{item.aimName}}</text>
@@ -20,14 +20,15 @@
           <text class='text1'>已拼到:</text>
           <image src='../src/locate-icon.png'></image>
         </view>
-      </view>
+      </navigator>
       <image src='../src/create-new.png' class='createNew' bindtap="creatNew"></image>
       <view class='space'></view>
     </view>
   </view>
 
+
   <view class='space7'>
     <view class='create'>创 建</view>
-    <view class='now'>当 前</view>
+    <view class='now' bindtap="JumpToNow">当 前</view>
   </view>
 </view>

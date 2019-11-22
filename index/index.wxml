@@ -1,22 +1,29 @@
-<view class="container">
+<view class="container" >
   <image class='background' src="../src/background-image.png" mode="aspectFill"></image>
 
-  <view class='selection'>
-    <image src='../src/上遮罩.png' class='test-image1'></image>
-    <image src='../src/people-icon.png' class='user-detail'></image>
-    <text  class='titel-text'>欢迎您</text>
+  <view wx:if="{{!hasUserInfo}}" class="userinfo">
+    <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" > 获取头像昵称 </button>
   </view>
 
-  <view class='selection'>
-    <image src='../src/search-window.png' class='test-image2'></image>
-    <view class="input">
-      <input value="{{tempAim}}" class="weui-input" maxlength="50" placeholder="输入您的目的地" bindinput="getAim"/>
-      <image src='../src/search-icon.png' class='search' bindtap="sendAim"></image>
+  <block wx:else>
+    <view class='selection' >
+      <image src='../src/up-cover.png' class='test-image1'></image>
+      <image src='{{userInfo.avatarUrl}}' class='user-detail'></image>
+      <text  class='titel-text'>欢迎您 {{userInfo.nickName}}</text>
     </view>
-  </view>
 
-  <view class='space7'>
-    <view class='create'>创 建</view>
-    <view class='now'>当 前</view>
-  </view>
+    <view class='selection'>
+      <image src='../src/search-window.png' class='test-image2'></image>
+      <view class="input">
+        <input value="{{tempAim}}" class="weui-input" maxlength="50" placeholder="输入您的目的地" bindinput="getAim"/>
+        <image src='../src/search-icon.png' class='search' bindtap="sendAim"></image>
+      </view>
+    </view>
+
+    <view class='space7'>
+      <view class='create'>创 建</view>
+      <view class='now' bindtap="JumpToNow">当 前</view>
+    </view>
+  </block>
+
 </view>

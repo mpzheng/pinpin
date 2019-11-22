@@ -1,7 +1,11 @@
+const app = getApp()
+
 Page({
   data: {
     beginName: '福州大学',
     aimName: '',
+    lng:0,
+    lat:0,
     beginTime: [
       {
         date: '',
@@ -9,7 +13,16 @@ Page({
       }
     ],
     countPeople:1,
-    waitTime: '00:30'
+    waitTime: '00:30',
+    unionPlace:'三区门口',
+    passenger:[
+      {
+        name: 'Van',
+        sdept: '人文学院',
+        tel: '13616071248',
+        sex: '男'
+      }
+    ],
   },
 
   onLoad: function (option) {
@@ -18,7 +31,23 @@ Page({
       aimName:option.aimName
     })
   },
-
+  getUnionPlace:function(e){
+    this.setData({
+      unionPlace: e.detail.value
+    })
+  },
+  JumpToNow: function () {
+    wx.showToast({
+      title: '加载中',
+      icon: 'loading',
+      duration: 10
+    })
+    setTimeout(function () {
+      wx.navigateTo({
+        url: '../current4/current4'
+      })
+    }, 10)
+  },
   bindDateChange: function (e) {
     let str = 'beginTime.date'
     this.setData({
@@ -40,20 +69,44 @@ Page({
   },
 
   bindCorrect: function () {
-    wx.setStorage({
-      key: "list",
-      data: this.data
-    })
-    const db = wx.cloud.database()
-    db.collection('order').add({
-      // data 字段表示需新增的 JSON 数据
-      data: this.data,
-      success: function (res) {
-        // res 是一个对象，其中有 _id 字段标记刚创建的记录的 id
+    app.globalData.hasPinDan = true
+    var that = this
+    wx.request({
+      url: 'https://api.map.baidu.com/geocoding/v3/', //仅为示例，并非真实的接口地址
+      data: {
+        'address': this.data.aimName,
+        'output': 'json',
+        'ak': 'LnINGNrNo234p9Kiv4pvMLzQiFlrvPls',
+        'city': '福州市'
+      },
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success(res) {
+        that.setData({
+          lng: res.data.result.location.lng,
+          lat: res.data.result.location.lat
+        })
+        wx.cloud.callFunction({
+          // 要调用的云函数名称
+          name: 'create',
+          // 传递给云函数的event参数
+          data: that.data
+        }).then(res => {
+          // output: res.result === 3
+          console.log(res.result._id)
+          wx.navigateTo({
+            url: '../current4/current4?_id=' + res.result._id
+          })
+        }).catch(err => {
+          // handle error
+          console.log("error")
+        })
+        console.log(res.data.result.location.lng)
       }
     })
-    wx.navigateTo({
-      url: '../current4/current4'
-    })
+
+    
+    
   }
 })

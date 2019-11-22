@@ -38,6 +38,18 @@ Page({/*调试的时候因为是电脑，所以定位不准，手机上没有问
     })
 
   },
+  JumpToNow: function () {
+    wx.showToast({
+      title: '加载中',
+      icon: 'loading',
+      duration: 10
+    })
+    setTimeout(function () {
+      wx.navigateTo({
+        url: '../current4/current4'
+      })
+    }, 10)
+  },
   jumpToNext:function(){
     wx.navigateTo({
       url: '../current3/current3?aimName='+this.data.aimName,
