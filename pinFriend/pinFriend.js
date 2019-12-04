@@ -1,22 +1,24 @@
 Page({
   data: {
-    listItem: [
-      {
-      name:'Van',
-      sdept:'人文学院',
-      tel:'13616071248',
-      sex:'男'
-      },
-      {
-        name: 'Bili',
-        sdept: '人文学院',
-        tel: '13616071298',
-        sex: '男'
-      },
-      {}, 
-      {}
-    ]
+    _id:'',
+    listItem:[]
   },
 
+  onLoad: function (options) {
+    var that = this
+    const db = wx.cloud.database()
+    console.log(options._id)
+    db.collection('order').doc(options._id).get({
+      success: function (res) {
+        that.setData({
+          listItem: res.data.passenger
+        })
+
+      }
+    })
+
+
+
+  },
   
 })

@@ -23,10 +23,10 @@ App({
     const db = wx.cloud.database()
     db.collection('user').add({
       data:{
-        name: '',
-        sdept: '',
-        tel: '',
-        sex: '',
+        name: 'Van',
+        sdept: '人文学院',
+        tel: '13616071248',
+        sex: '男',
         now_id:'',
         history_id:[]
       },
@@ -35,6 +35,7 @@ App({
       },
     })
   
+    
     wx.getSetting({//获取头像名称
       success: res => {
         if (res.authSetting['scope.userInfo']) {

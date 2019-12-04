@@ -17,10 +17,10 @@ Page({
     unionPlace:'三区门口',
     passenger:[
       {
-        name: 'Van',
-        sdept: '人文学院',
-        tel: '13616071248',
-        sex: '男'
+        name: '',
+        sdept: '',
+        tel: '',
+        sex: ''
       }
     ],
   },
@@ -88,21 +88,48 @@ Page({
           lat: res.data.result.location.lat
         })
         wx.cloud.callFunction({
-          // 要调用的云函数名称
-          name: 'create',
-          // 传递给云函数的event参数
-          data: that.data
+          name: 'getInfo',
         }).then(res => {
-          // output: res.result === 3
-          console.log(res.result._id)
-          wx.navigateTo({
-            url: '../current4/current4?_id=' + res.result._id
+          that.setData({
+            passenger: [
+              {
+                name: res.result.data[0].name,
+                sdept: res.result.data[0].sdept,
+                tel: res.result.data[0].tel,
+                sex: res.result.data[0].sex
+              }
+            ],
+          })
+          wx.cloud.callFunction({
+            // 要调用的云函数名称
+            name: 'create',
+            // 传递给云函数的event参数
+            data: that.data
+          }).then(res => {
+            // output: res.result === 3
+            wx.cloud.callFunction({
+              // 要调用的云函数名称
+              name: 'setInfo',
+              // 传递给云函数的event参数
+              data: {
+                id: res.result._id
+              }
+            }).then(res => {
+              // output: res.result === 3
+              wx.navigateTo({
+                url: '../current4/current4'
+              })
+            }).catch(err => {
+              // handle error
+              console.log("error")
+            })
+            
+          }).catch(err => {
+            // handle error
+            console.log("error")
           })
         }).catch(err => {
-          // handle error
-          console.log("error")
         })
-        console.log(res.data.result.location.lng)
       }
     })
 
