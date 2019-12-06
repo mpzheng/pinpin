@@ -10,7 +10,7 @@ Page({
   getAim: function(e) {
     this.setData({
       tempAim: e.detail.value,
-      aimName: e.detail.value
+      aimName: e.detail.value,
     })
   },
   sendAim: function(e) {
