@@ -5,7 +5,7 @@ App({
     } else {
       wx.cloud.init({
         env: '',
-        traceUser: true,
+        traceUser: true
       })
     }
 
