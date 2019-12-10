@@ -6,7 +6,8 @@
     "current3/current3",
     "current4/current4",
     "joinTo/joinTo",
-    "pinFriend/pinFriend"
+    "pinFriend/pinFriend",
+    "selectPinFriend/selectPinFriend"
   ],
   "window": {
     "backgroundTextStyle": "light",

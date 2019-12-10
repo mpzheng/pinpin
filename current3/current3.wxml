@@ -81,9 +81,9 @@
   </view>
 
   <view class='selection2'>
-    <view class='space4'>
-      <text>筛选拼友(暂无)</text>
-    </view>
+    <navigator url='../selectPinFriend/selectPinFriend' class='space4'>
+      <text>筛选拼友</text>
+    </navigator>
   </view>
 
   <view class='selection2'>

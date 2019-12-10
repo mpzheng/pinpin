@@ -6,9 +6,11 @@
       <view class="title-icon">
         <image src='../src/pining-icon.png'></image>
       </view>
+      
       <view class="title-text">
         <text>加入拼单</text>
       </view>
+      
     </view>
   </view>
 
@@ -64,10 +66,18 @@
         <text class='test-text1'>已拼</text>
         {{countPeople}}人
       </view>
-      <view class="button2" bindtap="bindCorrect">
-        <text>加 入</text>
-        <text>拼 单</text>
-      </view>
+      <block wx:if="{{!hasPinDan}}">
+        <view class="button2" bindtap="bindCorrect">
+          <text>加 入</text>
+          <text>拼 单</text>
+        </view>
+      </block>
+      <block wx:else>
+        <view class="button2">
+          <text>已 在</text>
+          <text>拼 单</text>
+        </view>
+      </block>
     </view>
   </view>
 

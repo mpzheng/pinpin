@@ -2,28 +2,67 @@
   <image class='background' src="../src/background-image.png" mode="aspectFill"></image>
 
   <view wx:if="{{!hasUserInfo}}" class="userinfo">
-    <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" > 获取头像昵称 </button>
+    <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" > 获取头像昵称</button>
   </view>
 
   <block wx:else>
-    <view class='selection' >
-      <image src='../src/up-cover.png' class='test-image1'></image>
-      <image src='{{userInfo.avatarUrl}}' class='user-detail'></image>
-      <text  class='titel-text'>欢迎您 {{userInfo.nickName}}</text>
-    </view>
 
-    <view class='selection'>
-      <image src='../src/search-window.png' class='test-image2'></image>
-      <view class="input">
-        <input value="{{tempAim}}" class="weui-input" maxlength="50" placeholder="输入您的目的地" bindinput="getAim"/>
-        <image src='../src/search-icon.png' class='search' bindtap="sendAim"></image>
+    <view wx:if="{{!hasSignIn}}">
+      <view class='selection' >
+          <image src="../src/logo.png" class='title-selection'></image>
+      </view>
+      <view class='selection' >
+        <view class='signIn' >
+          学号： 
+          <view class='signIn-item' >
+            <input class="weui-input" maxlength="20" bindinput="getStudentId"/>
+          </view>
+          学院： 
+          
+          <picker bindchange="bindPickerChange" value="{{index}}" range="{{deptArray}}">
+            <view class='signIn-item2' >
+              <view class="picker">
+                {{deptArray[index]}}
+              </view>
+            </view>
+          </picker>
+          
+          电话： 
+          <view class='signIn-item' >
+            <input class="weui-input" maxlength="20" bindinput="getTel"/>
+          </view>
+          <view class='correct' bindtap="correct">
+            <text>确定</text>
+          </view>
+        </view>
       </view>
     </view>
 
-    <view class='space7'>
-      <view class='create'>创 建</view>
-      <view class='now' bindtap="JumpToNow">当 前</view>
-    </view>
+
+    <block wx:else>
+      <view class='selection' >
+        <image src='../src/up-cover.png' class='test-image1'></image>
+        <navigator url='../userDetial/userDetial'>
+          <image src='{{userInfo.avatarUrl}}' class='user-detail'></image>
+        </navigator>
+        <text  class='titel-text'>欢迎您 {{userInfo.nickName}}</text>
+      </view>
+
+      <view class='selection'>
+        <image src='../src/search-window.png' class='test-image2'></image>
+        <view class="input">
+          <input value="{{tempAim}}" class="weui-input" maxlength="50" placeholder="输入您的目的地" bindinput="getAim"/>
+          <image src='../src/search-icon.png' class='search' bindtap="sendAim"></image>
+        </view>
+      </view>
+
+      <view class='space7'>
+        <view class='create'>创 建</view>
+        <view class='now' bindtap="jumpToNow">当 前</view>
+      </view>
+    </block>
+
+
   </block>
 
 </view>

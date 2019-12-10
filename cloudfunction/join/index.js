@@ -4,20 +4,15 @@ const cloud = require('wx-server-sdk')
 cloud.init()
 
 const db = cloud.database()
-// 云函数入口函数
+const _ = db.command
+
 exports.main = async (event, context) => {
   try {
-    return await db.collection('todos').where({
-      done: false
-    })
+    return await db.collection('order').doc(event.id)
       .update({
         data: {
-          passenger2: {
-            name: 'Bili',
-            sdept: '人文学院',
-            tel: '13616071298',
-            sex: '男'
-          }
+          passenger: _.push([event.person]),
+          countPeople:_.inc(1)
         },
       })
   } catch (e) {

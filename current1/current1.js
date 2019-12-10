@@ -2,7 +2,7 @@ Page({
 
   data: {
     aimName:'',
-    listItem: []//需要加id
+    listItem: []
   },
 
   creatNew :function (){

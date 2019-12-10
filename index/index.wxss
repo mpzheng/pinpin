@@ -20,6 +20,67 @@ page{
   align-items: center;
 }
 
+.title-selection{
+  height: 250rpx;
+  width: 600rpx;
+  margin-top: 50rpx;
+}
+
+.signIn{
+  height: 700rpx;
+  width: 600rpx;
+  margin-top: 75rpx;
+  background-color: rgb(255, 255, 255,0.6);
+  border-radius: 30rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40rpx;
+  color: blue;
+  flex-wrap: wrap;
+  padding-top: 50rpx;
+}
+
+.signIn-item{
+  height: 60rpx;
+  width: 340rpx;
+  background-color: white;
+  border-radius: 30rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  padding-left: 20rpx;
+  margin-left: 20rpx;
+  font-size: 35rpx;
+  border: 1rpx solid rgb(126, 118, 118,0.2);
+}
+.signIn-item2{
+  height: 60rpx;
+  width: 340rpx;
+  background-color: white;
+  border-radius: 30rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  margin-left: 20rpx;
+  font-size: 35rpx;
+  border: 1rpx solid rgb(126, 118, 118,0.2);
+}
+
+.correct{
+  height: 100rpx;
+  width: 250rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(0, 0, 255,0.6);
+  border-radius: 25rpx;
+  color: white;
+  font-size: 50rpx;
+}
+
 .test-image1{
   height: 100rpx;
   width: 100%;
