@@ -1,7 +1,7 @@
 const app = getApp()
 Page({
   data: {
-    userInfo:null
+    userInfo:null,
   },
   onLoad: function () {
     this.setData({
